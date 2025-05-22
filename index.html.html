@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald’s</title>
+    <style>
+      
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-image: url('/api/placeholder/1200/800');
+          background-size: cover;
+          background-attachment: fixed;
+          color: #2411cf;
+      }
+      
+      .container {
+          width: 80%;
+          margin: 0 auto;
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      header {
+          text-align: center;
+          padding: 20px 0;
+          background-color: #f8f1e5;
+          border-radius: 10px;
+          margin-bottom: 20px;
+      }
+      
+      .logo {
+          max-width: 150px;
+          margin-bottom: 10px;
+      }
+      
+      h1 {
+          font-family: 'Georgia', serif;
+          font-size: 36px;
+          color: #131313;
+          margin: 0;
+      }
+      
+    
+      nav {
+          background-color: #29c3ce;
+          border-radius: 8px;
+          margin-bottom: 20px;
+      }
+      
+      nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+      }
+      
+      nav li {
+          padding: 15px 20px;
+      }
+      
+      nav a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 18px;
+          transition: color 0.3s;
+      }
+      
+ 
+      section {
+          margin-bottom: 30px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      h2 {
+          font-family: 'Verdana', sans-serif;
+          color: #4dcbdb;
+          font-size: 28px;
+      }
+      
+      h3 {
+          font-family: 'Tahoma', sans-serif;
+          color: #21a9bb;
+          font-size: 22px;
+      }
+      
+      p {
+          font-size: 16px;
+          line-height: 1.6;
+          text-align: justify;
+      }
+      
+
+      footer {
+          text-align: center;
+          padding: 20px;
+          color: white;
+          border-radius: 10px;
+          margin-top: 20px;
+      }
+      
+      footer p {
+          margin: 5px 0;
+          text-align: center;
+      }
+      
+
+      .frame-container {
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+      }
+      
+      .frame-header {
+          flex: 0 0 auto;
+          background-color: #f8f1e5;
+          padding: 15px;
+          text-align: center;
+          border-bottom: 2px solid #0dc0c0;
+      }
+      
+      .frame-content {
+          flex: 1 1 auto;
+          display: flex;
+          overflow: hidden;
+      }
+      
+      .frame-nav {
+          flex: 0 0 200px;
+          background-color: #FFF5E1;
+          padding: 15px;
+          border-right: 2px solid #10cfc6;
+          overflow-y: auto;
+      }
+      
+      .frame-main {
+          flex: 1 1 auto;
+          padding: 20px;
+          overflow-y: auto;
+      }
+      
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px 0;
+      }
+      
+      table, th, td {
+          border: 2px solid #0fd1d1;
+      }
+      
+      th, td {
+          padding: 12px;
+          text-align: center;
+      }
+      
+      th {
+          background-color: #24c1d6;
+          color: white;
+      }
+      
+      tr:nth-child(even) {
+          background-color: #FFF5E1;
+      }
+      
+
+      .areas-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+      }
+      
+      .area {
+          flex: 0 0 calc(33% - 20px);
+          background-color: #FFF5E1;
+          border-radius: 8px;
+          padding: 15px;
+          margin-bottom: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .area-icon {
+          width: 60px;
+          height: 60px;
+          background-color: #189bcf;
+          border-radius: 50%;
+          margin: 0 auto 15px;
+      }
+      
+      .area h4 {
+          text-align: center;
+          color: #2974d6;
+          font-size: 20px;
+          margin-top: 0;
+      }
+      
+      .area ul {
+          padding-left: 20px;
+      }
+      
+      .area li {
+          margin-bottom: 5px;
+      }
+      
+
+      .cta-button {
+          display: inline-block;
+          background-color: #84b4eb;
+          color: white;
+          padding: 12px 25px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 18px;
+          margin-top: 20px;
+          transition: background-color 0.3s;
+      }
+      
+      .cta-button:hover {
+          background-color: #749ed4;
+      }
+  </style>
+</head>
+<body bgcolor="darksalmon">
+  <div class="frame-container">
+    <div class="frame-header">
+      <p><font size="8">McDonald’s</font></p>
+      <img src="logo.jpeg" alt="logo" class="logo">
+    </div>
+    <div class="frame-content">
+      <div class="frame-nav">
+        <nav>
+          <ul style="flex-direction:column ;">
+            <li><a href="#inicio" target="mainFrame">historia</a></li>
+            <li><a href="#queofreceMcDonlad´s" target="mainFrame">Qué Ofrece McDonald´s</a></li>
+            <li><a href="#productos" target="mainFrame">Productos</a></li>
+            <li><a href="#mision" target="mainFrame">Misión</a></li>
+            <li><a href="#vision" target="mainFrame">Visión</a></li>
+            <li><a href="#cupones" target="mainFrame">cupones</a></li>
+            <li><a href="#video" target="mainFrame">Video</a></li>
+            <li><a href="#contacto" target="mainFrame">Contacto</a></li>
+          </ul>
+        </nav> 
+      </div>
+      <div class="frame-main" id="mainFrame">
+        <div class="container">
+          <section id="historia">
+            <center><h2>HISTORIA</h2></center>
+            <p><font size="5">fundado en 1940 por Richard y Maurice McDonald en San Bernardino, California.
+              Originalmente, el restaurante ofrecía un menú tradicional, pero en 1948 decidieron
+               simplificar su oferta y se centraron en hamburguesas, papas fritas y batidos.
+                Este enfoque llevó a la creación del "Speedee Service System", que introdujo
+                el concepto de comida rápida:</font></p>
+              <ul>
+                <li><span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 17px; color: black;">entregas hasta la puerta de su casa</span></li>
+                <li><span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 17px; color: black;">Higiene y calidad</span></li>
+                <li><span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 17px; color: black;">helados de diferentes sabores</span></li>
+              </ul>
+              <a href="https://www.mcdonalds.com.mx/menu" >visitanos</a>
+          </section>
+          <section id="ofrecemos">
+            <font face="britannic-bolt"=35>
+              <center><h2>¿QUE OFRECE McDonal´s?</h2></center>
+            </font>
+            <div style="background-color: aliceblue; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+              <h3 style="text-align: center; font-family: 'Palatino Linotype'; color: rgb(59, 17, 209); font-size: 30px; margin-top: 0;">EL MEJOR SERVICO QUE ENCONTRARAS</h3>
+              <ul style="list-style-type: none; padding-left: 0;">
+                  <li style="margin-bottom: 10px;"><p><font size="5"></font></p></li>
+                  <li style="margin-bottom: 10px;"><p><font size="5">Comida rápida: Menú variado que incluye hamburguesas, nuggets, ensaladas, desayunos y postres.</font></p></li>
+                  <li style="margin-bottom: 10px;"><p><font size="5"></font></p>Servicio en el local: Comida para consumir en el restaurante en un ambiente cómodo.</li>
+                  <li style="margin-bottom: 10px;"><p><font size="5"></font></p>Entrega a domicilio: A través de aplicaciones de entrega o su propio servicio de entrega en algunas ubicaciones.</li>
+                  <li style="margin-bottom: 10px;"><p><font size="5"></font></p>Wi-Fi gratuito: En muchas ubicaciones, ofrecen acceso a Internet sin costo para los clientes.</li>
+                  <a href="https://www.youtube.com/watch?v=Ftuk9sEP2F4">youtube</a>
+              </ul>
+          </div>
+          </section>
+          <section class="productos">
+            <center>
+              <h2>PRODUCTOS</h2>
+            </center>
+            <div style="display: flex; margin-bottom: 30px;">
+              <img src="2 Hamburguesas con queso.png" alt="15" style="width: 200px; border-radius: 8px; margin-right: 20px;">
+              <div>
+                  <h2>Hamburguesas</h2>
+                  <p><font size="5">Desde la clásica Big Mac hasta opciones como Cuarto de Libra, 
+                    McNífica y hamburguesas gourmet.</font></p>
+                  <p style="font-family: 'Arial Black'; color: rgb(12, 12, 12); font-size: 20px;"></p>
+              </div>
+          </div>
+          <div style="display: flex; margin-bottom: 30px;">
+            <img src="pollo.png" alt="15" style="width: 200px; border-radius: 8px; margin-right: 20px;">
+            <div>
+                <h2>Pollo</h2>
+                <p><font size="5">McNuggets, McCrispy y otras opciones de pollo crujiente.</font></p>
+                <p style="font-family: 'Trebuchet MS'; color: rgb(23, 24, 24); font-size: 20px;"></p>
+            </div>
+        </div>
+        <div style="display: flex; margin-bottom: 30px;">
+            <img src="Cajita Feliz.jpeg" alt="15" style="width: 200px; border-radius: 8px; margin-right: 20px;">
+          <div>
+              <h2>Cajita feliz</h2>
+              <p><font size="5">Perfecta para los niños, incluye una comida y un juguete.</font></p>
+              <p style="font-family: 'Trebuchet MS'; color: rgb(7, 7, 7); font-size: 20px;"></p>
+          </div>
+      </div>
+      <div style="display: flex; margin-bottom: 30px;">
+        <img src="Papas Grandes.png" alt="15" style="width: 200px; border-radius: 8px; margin-right: 20px;">
+        <div>
+            <h2>Acompañamiento</h2>
+            <p><font size="5">Papas fritas, ensaladas y otros complementos.</font></p>
+        </div>
+    </div>
+          </section>
+          <section id="mision">
+            <center>
+              <h2 style="color: blue;font-size: 40px;">MISIÓN</h2>
+            </center>
+            <p style="color: rgb(22, 20, 20);font-size: 25px;">Brindamos los más altos estándares de calidad, seguridad alimentaria e higiene. 
+              Valoramos y apoyamos a nuestro equipo, ofreciéndoles oportunidades de capacitación, entrenamiento y desarrollo profesional.
+              Celebramos la diversidad, promoviendo la inclusión y un ambiente de trabajo justo y respetuoso, donde todos se sientan bienvenidos
+               y puedan alcanzar su máximo potencial.</p>
+          </section>
+         <section id="visión">
+          <center>
+            <h2 style="color: blue;font-size: 40px;">VISIÓN</h2>
+          </center>
+          <p style="color: rgb(15, 15, 15);font-size: 26px;">Somos apasionados operadores de McDonald's en 20 países de América Latina y el Caribe. 
+            Brindamos los más altos estándares de calidad, seguridad alimentaria e higiene.</p>
+         </section>
+         <section id="cupones">
+         <center>
+          <h2 style="color: rgb(45, 206, 235);font-size: 45px;">Cupones</h2>
+         </center>
+          <div style="overflow-x:auto;">
+            <table border="3">  
+              <tr>
+                  <th>Nombre</th>
+                  <th>Producto</th>
+                  <th>PRECIO</th>
+              </tr>
+              <tr>
+                  <td><b>2 hamburguesas con queso</b></td>
+                  <td><img src="2 Hamburguesas con queso.png" width="55" height="55"></td>
+                  <td>$46.00</td>
+              </tr>
+              <tr>
+                  <td><b>Refresco sin Azucar Chico</b></td>
+                  <td><img src="Coca sin Azucar Chico.png"  width="55" height="55"></td>
+                  <td>$25.00</td>
+              </tr>
+              <tr>
+                  <td><b>Papas fritas Grandes</b></td>
+                  <td><img src="Papas Grandes.png"  width="55" height="55"></td>
+                  <td>$36.00</td>
+              </tr>
+              <tr>
+                  <td><b></b>postres</td>
+                  <td><img src="comida.jpg"  width="55" height="55"></td>
+                  <td>$67.00</td>
+              </tr>
+              <tr>
+                  <td><b>Desayuno Deluxe</b></td>
+                  <td><img src="Desayuno Deluxe.png" width="55" height="55"></td>
+                  <td>$40.00</td>
+              </tr>
+              <tr>
+                  <td><b>Cajita Feliz</b></td>
+                  <td><img src="Cajita Feliz.jpeg" width="55" height="55"></td>
+                  <td>Gratis</td>
+              </tr>
+              <tr>
+                  <td><b>Fanta chica</b></td>
+                  <td><img src="Fanta chica.png" width="55" height="55"></td>
+                  <td>$25.00</td>
+              </tr>
+              <tr>
+                  <td><b>Papas Medianas</b></td>
+                  <td><img src="papas medianas.png" width="55" height="55"></td>
+                  <td>$17.00</td>
+              </tr>
+              <tr>
+                  <td><b>Desayuno Especial</b></td>
+                  <td><img src="Desayuno Especial.png" width="55" height="55"></td>
+                  <td>$35.00</td>
+              </tr>
+          </table>
+      </div>
+      <center>
+          <p><a href="https://www.mcdonalds.com.mx/menu">visita el sitio</a>.</p>
+      </center>
+          </div>
+
+         </center>
+         </section>
+         <section id="video">
+          <center>
+            <h2>video</h2>
+            <div style="width: 90%;max-width: 700px;margin: 0 auto;">
+                <p>ingresa<a href="https://www.youtube.com/user/mcdonaldsmexoficial" target="_blank">YouTube</a></p>
+            </div>
+          </center>
+         </section>
+         <section id="contacto">
+          <center>
+            <h1>contacto</h1>
+          </center>
+          <div style="margin: 30px auto; max-width: 800px;">
+            <table style="width: 90%; border-collapse:collapse;">
+              <tr>
+                <td style="text-align: center; padding: 15px; width: 33%;">
+                    <i style="font-size: 24px; color: #539ad4; display: block; margin-bottom: 10px;">✉</i>
+                    <h2 style="margin-top: 0; color: #12c4db;">Dirección</h2>
+                    <h3 style="margin-bottom: 0;">centro,Oaxaca de Juarez</h3>
+                </td>
+                <td style="text-align: center; padding: 15px; width: 33%;">
+                    <i style="font-size: 24px; color: #1a58a8; display: block; margin-bottom: 10px;">✉</i>
+                    <h2 style="margin-top: 0; color: #17a6d1;">correro</h2>
+                    <h3 style="margin-bottom: 0;">lopezitamaer532gmail</h3>
+                </td>
+            </tr>
+            </table>
+          </div>
+
+         </section>
+         
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+</body>
+</html>
